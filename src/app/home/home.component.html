@@ -1,0 +1,51 @@
+<!-- home.component.html -->
+<div class="home-container">
+    <!-- Carousel Section (Top) -->
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-item" *ngFor="let img of carouselImages">
+          <img [src]="img" alt="Apartment Image" />
+        </div>
+      </div>
+    </div>
+
+     <!-- Filter Section (Left) -->
+    <div class="filter-section">
+      <h3>Filter Apartments</h3>
+      <input
+        type="text"
+        placeholder="Search by Keyword"
+        [(ngModel)]="searchTerm"
+        (input)="filterApartments()"
+      />
+    </div>
+  
+    <!-- Apartment Listings Section -->
+    <div class="apartment-list">
+      <div><h3>Available Apartments</h3></div>
+      
+      <!-- Check if logged in -->
+      <!-- <div *ngIf="isLoggedIn" class="add-apartment-btn">
+        <button (click)="addApartment()">Add New Apartment</button>
+      </div> -->
+  
+      <!-- List Apartments -->
+      <div *ngIf="filteredApartments.length > 0" class="filtered-apartments-list">
+        <div class="apartment" *ngFor="let apartment of filteredApartments">
+          <div class="apartment-image">
+            <img [src]="apartment.image" alt="Apartment" />
+          </div>
+          <div class="apartment-details">
+            <h4>{{ apartment.title }}</h4>
+            <p>{{ apartment.description }}</p>
+            <button (click)="viewDetails(apartment)">View Details</button>
+            <button (click)="markFavorite(apartment)" class="fav-btn">Mark as Favorite</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="filteredApartments.length === 0">
+        <p>No apartments available that match your filter.</p>
+      </div>
+    </div>
+  </div>
+  

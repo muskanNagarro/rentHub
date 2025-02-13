@@ -1,0 +1,40 @@
+<!-- apartment-detail.component.html -->
+<div *ngIf="apartment">
+  <!-- Back Button -->
+  <button class="back-button" (click)="goBack()">Back to Home</button>
+  <div class="apartment-detail-container">
+    <!-- Apartment Image -->
+    <div class="apartment-image">
+      <img [src]="apartment.image" alt="Apartment Image" />
+    </div>
+    
+    <!-- Apartment Details -->
+    <div class="apartment-info">
+      <h2>{{ apartment.title }}</h2>
+      <p><strong>Description:</strong> {{ apartment.description }}</p>
+      <p><strong>Location:</strong> {{ apartment.location }}</p>
+    </div>
+  </div>
+  
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <h3>Comments</h3>
+    <div *ngFor="let comment of apartment.comments; let i = index" class="comment">
+      <p><strong>User {{ i + 1 }}:</strong> {{ comment }}</p>
+    </div>
+    
+    <div *ngIf="isLoggedIn" class="add-comment">
+      <textarea [(ngModel)]="newComment" placeholder="Add a comment..." rows="4"></textarea>
+      <button (click)="addComment()">Post Comment</button>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="login-prompt">
+      <p>Please log in to add a comment.</p>
+    </div>
+    
+  </div>
+</div>
+
+<div *ngIf="!apartment">
+  <p>Apartment not found.</p>
+</div>

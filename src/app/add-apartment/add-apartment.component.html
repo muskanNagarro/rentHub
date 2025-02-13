@@ -1,0 +1,150 @@
+<!-- add-apartment.component.html -->
+<div class="add-apartment-form">
+  <h2>Add New Apartment</h2>
+   
+  <form [formGroup]="apartmentForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Apartment/Building Type -->
+    <div class="form-group">
+      <label for="propertyType">Choose your apartment/building:</label>
+      <select id="propertyType" formControlName="propertyType" required>
+        <option value="">Select</option>
+        <option value="floor">Floor</option>
+        <option value="flat">Flat</option>
+        <option value="plot">Plot</option>
+      </select>
+      <div *ngIf="apartmentForm.controls['propertyType'].invalid && apartmentForm.controls['propertyType'].touched" class="error">
+        Property Type is required.
+      </div>
+    </div>
+
+    <!-- Building Name -->
+    <div class="form-group">
+      <label for="buildingName">Enter Name of Building:</label>
+      <input type="text" id="buildingName" formControlName="buildingName" required />
+      <div *ngIf="apartmentForm.controls['buildingName'].invalid && apartmentForm.controls['buildingName'].touched" class="error">
+        Building name is required.
+      </div>
+    </div>
+
+    <!-- Shared Property -->
+    <div class="form-group">
+      <label>Is this shared property?</label>
+      <label>
+        <input type="radio" formControlName="sharedProperty" value="yes" /> Yes
+      </label>
+      <label>
+        <input type="radio" formControlName="sharedProperty" value="no" /> No
+      </label>
+      <div *ngIf="apartmentForm.controls['sharedProperty'].invalid && apartmentForm.controls['sharedProperty'].touched" class="error">
+        Please select Yes or No.
+      </div>
+    </div>
+
+    <!-- Property Location -->
+    <div class="form-group">
+      <label for="location">Property Location:</label>
+      <input type="text" id="location" formControlName="location" required />
+      <div *ngIf="apartmentForm.controls['location'].invalid && apartmentForm.controls['location'].touched" class="error">
+        Property location is required.
+      </div>
+    </div>
+
+    <!-- Property Details -->
+    <div class="form-group">
+      <label for="squareFeet">Square Feet:</label>
+      <input type="number" id="squareFeet" formControlName="squareFeet" required />
+      <div *ngIf="apartmentForm.controls['squareFeet'].invalid && apartmentForm.controls['squareFeet'].touched" class="error">
+        Square feet is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Stay/Lease Type:</label>
+      <label>
+        <input type="radio" formControlName="leaseType" value="longTerm" /> Long term (6 months)
+      </label>
+      <label>
+        <input type="radio" formControlName="leaseType" value="shortTerm" /> Short Term
+      </label>
+      <label>
+        <input type="radio" formControlName="leaseType" value="both" /> Both
+      </label>
+      <div *ngIf="apartmentForm.controls['leaseType'].invalid && apartmentForm.controls['leaseType'].touched" class="error">
+        Please select a stay/lease type.
+      </div>
+    </div>
+
+    <!-- Expected Rent -->
+    <div class="form-group">
+      <label for="expectedRent">Expected Rent:</label>
+      <input type="number" id="expectedRent" formControlName="expectedRent" required />
+      <div *ngIf="apartmentForm.controls['expectedRent'].invalid && apartmentForm.controls['expectedRent'].touched" class="error">
+        Expected rent is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="negotiable" /> Negotiable
+      </label>
+    </div>
+
+    <!-- Price Mode -->
+    <div class="form-group">
+      <label>Price Mode:</label>
+      <label>
+        <input type="radio" formControlName="priceMode" value="perMonth" /> Per Month
+      </label>
+      <label>
+        <input type="radio" formControlName="priceMode" value="utilitiesIncluded" /> Utilities included in rent
+      </label>
+      <div *ngIf="apartmentForm.controls['priceMode'].invalid && apartmentForm.controls['priceMode'].touched" class="error">
+        Please select a price mode.
+      </div>
+    </div>
+
+    <!-- Furnished -->
+    <div class="form-group">
+      <label>Is the room/apartment furnished?</label>
+      <label>
+        <input type="radio" formControlName="furnished" value="yes" /> Yes
+      </label>
+      <label>
+        <input type="radio" formControlName="furnished" value="no" /> No
+      </label>
+      <div *ngIf="apartmentForm.controls['furnished'].invalid && apartmentForm.controls['furnished'].touched" class="error">
+        Please select if the apartment is furnished.
+      </div>
+    </div>
+
+    <!-- Amenities -->
+    <div class="form-group" formGroupName="amenities">
+      <label>Amenities included:</label>
+      <div *ngFor="let amenity of amenitiesList">
+        <label><input type="checkbox" [formControlName]="amenitiesControlNames[amenity]" /> {{amenity}}</label>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" required />
+      <div *ngIf="apartmentForm.controls['title'].invalid && apartmentForm.controls['title'].touched" class="error">
+        Title is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+      <div *ngIf="apartmentForm.controls['description'].invalid && apartmentForm.controls['description'].touched" class="error">
+        Description is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="apartmentForm.invalid">Add Apartment</button>
+    <!-- Back Button -->
+    <button class="back-button" (click)="goBack()">Back to Home</button>
+  </form>
+</div>

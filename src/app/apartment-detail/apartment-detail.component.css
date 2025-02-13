@@ -1,0 +1,91 @@
+/* apartment-detail.component.css */
+.apartment-detail-container {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+  
+  .apartment-image {
+    flex: 1;
+  }
+  
+  .apartment-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .apartment-info {
+    flex: 2;
+  }
+  
+  .apartment-info h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .apartment-info p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .comments-section {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .comments-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4caf50;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .add-comment button{
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .back-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    float: right;
+  }
+  
+  .add-comment button:hover {
+    background-color: #45a049;
+  }
+  
+  .login-prompt {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+  }
+  
