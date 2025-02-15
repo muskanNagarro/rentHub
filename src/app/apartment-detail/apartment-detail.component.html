@@ -3,6 +3,7 @@
   <!-- Back Button -->
   <button class="back-button" (click)="goBack()">Back to Home</button>
   <div class="apartment-detail-container">
+    <h2>{{ apartment.title }}</h2>
     <!-- Apartment Image -->
     <div class="apartment-image">
       <img [src]="apartment.image" alt="Apartment Image" />
@@ -10,7 +11,6 @@
     
     <!-- Apartment Details -->
     <div class="apartment-info">
-      <h2>{{ apartment.title }}</h2>
       <p><strong>Description:</strong> {{ apartment.description }}</p>
       <p><strong>Location:</strong> {{ apartment.location }}</p>
     </div>
