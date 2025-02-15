@@ -12,32 +12,35 @@ export class HomeComponent implements OnInit {
   
   searchTerm: string = '';
   carouselImages: string[] = [
-    '../../assets/images/apartment-4.jpg', 
-    '../../assets/images/apartment-5.jpg', 
-    '../../assets/images/apartment-6.jpg'
+    '/assets/images/apartment4.jpg', 
+    '/assets/images/apartment5.jpg', 
+    '/assets/images/apartment6.jpg',
+    '/assets/images/apartment1.jpg', 
+    '/assets/images/apartment2.jpg', 
+    '/assets/images/apartment3.jpg'
   ];
   apartments = [
     {
       id: 1,
       title: 'Luxury Apartment',
-      description: 'Spacious 2 bedroom apartment in the city.',
-      image: '../../assets/images/apartment1.jpg',
+      description: 'Spacious 2 bedroom apartment in the city. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
+      image: '/assets/images/apartment4.jpg',
       location: 'City Center',
       comments: ['Great apartment, love the location!', 'Very spacious and modern.']
     },
     {
       id: 2,
       title: 'Modern Studio',
-      description: 'Affordable studio near the beach.',
-      image: '../../assets/images/apartment2.jpg',
+      description: 'Affordable studio near the beach. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
+      image: '/assets/images/apartment2.jpg',
       location: 'Beachside',
       comments: ['Perfect place for a weekend getaway!']
     },
     {
       id: 3,
       title: 'Cozy Flat',
-      description: 'A cozy flat in a quiet neighborhood.',
-      image: '../../assets/images/apartment3.jpg',
+      description: 'A cozy flat in a quiet neighborhood. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
+      image: '/assets/images/apartment6.jpg',
       location: 'Suburb',
       comments: []
     }
