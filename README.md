@@ -15,3 +15,5 @@ Once the server is running, open your browser and navigate to `http://localhost:
 ## Github link
 https://github.com/muskanNagarro/rentHub.git
 
+## Website Host URL
+https://rent-hub-lilac.vercel.app/
